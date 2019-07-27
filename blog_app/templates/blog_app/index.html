@@ -9,7 +9,7 @@
 	<a href="">new article</a>
 </h1>
 {% for article in articles %}
-	<a href="">{{article.title}}</a>
+	<a href="{% url 'blog_app:article_page' article.id %}">{{article.title}}</a>
 	</br>
 {% endfor %}
 <h1>{{article.title}}</h1>

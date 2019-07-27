@@ -9,6 +9,6 @@ def index(request):
     return render(request, "blog_app/index.html",{'articles':articles})
 
 def article_page(request,article_id):
-    article=models.Article.objects.get(pk=article_id)
+    article=models.Article.objects.get(pk=article_id+1)
     return render(request,'blog_app/article_page.html',{'article':article}) 
     

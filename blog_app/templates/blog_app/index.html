@@ -5,14 +5,16 @@
 <title>My blog</title>
 </head>
 <body>
-<h1>
-	<a href="">new article</a>
-</h1>
-{% for article in articles %}
-	<a href="{% url 'blog_app:article_page' article.id %}">{{article.title}}</a>
-	</br>
-{% endfor %}
-<h1>{{article.title}}</h1>
-<h3>{{article.content}}</h3>
+	<div>
+		<h1>
+			<a href={%url 'blog_app:edit_page' 0 %}>new article</a>
+		</h1>
+	</div>
+	<div>
+		{% for article in articles %} 
+		<a href="{% url 'blog_app:article_page' article.id %}">{{article.title}}</a>
+		<br />
+		{% endfor %}
+	</div>
 </body>
 </html>

@@ -3,17 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>My blog</title>
+<style>
+li{
+	border-bottom:1px dotted #ccc;
+	height:50px;
+}
+div{
+	margin-left:150px;
+}
+body{
+	background:url(http://file.hanfcn.com/attachment/webbg/20171213/hanfcn.com_20171213112354ttdbfxa5qua.jpg) no-repeat center;
+	background-size: 100% 100%;
+    background-attachment: fixed;
+}
+</style>
 </head>
 <body>
 	<div>
 		<h1>
-			<a href={%url 'blog_app:edit_page' 0 %}>new article</a>
+			<a href={%url 'blog_app:edit_page' 0 %}>新建博客</a>
+			<br/><br/><br/>
 		</h1>
 	</div>
 	<div>
+		<h1>博客列表：</h1>
 		{% for article in articles %} 
-		<a href="{% url 'blog_app:article_page' article.id %}">{{article.title}}</a>
-		<br />
+		<li><a href="{% url 'blog_app:article_page' article.id %}">{{article.title}}</a><br/></li>
 		{% endfor %}
 	</div>
 </body>

@@ -2,13 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Article page</title>
+<title>Article page</title> 
+<style>
+div{ 
+	margin-left:150px; 
+	width:666px;
+}
+body{
+	background:url(http://file.hanfcn.com/attachment/webbg/20171213/hanfcn.com_20171213112354ttdbfxa5qua.jpg) no-repeat center;
+	background-size: 100% 100%;
+    background-attachment: fixed;
+}
+</style>
 </head>
 <body>
-<h1>{{article.title}}</h1>
-<br/>
-<h3>{{article.content}}</h3>
-<br/><br/>
-<a href={% url 'blog_app:edit_page' article.id %}>modify article</a>	
+	<div>
+		<h1>{{article.title}}</h1>
+		<br /><br />
+		<h3>{{article.content}}</h3>
+		<br />
+		<br /> <a href={%url 'blog_app:edit_page' article.id %}>modify article</a>
+	</div>
 </body>
 </html>
